@@ -1,0 +1,26 @@
+using System;
+
+namespace n2_b
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int nombreSecret1 = rnd.Next(1, 11);
+            int nombreSecret2 = rnd.Next(1, 11);
+            int nombrePerComprovar;
+            
+
+            Console.WriteLine("Prova sort. Els nombres estàn del 1 al 10.");
+            nombrePerComprovar = Convert.ToInt32(Console.ReadLine());
+
+            if (nombrePerComprovar == nombreSecret1 || nombrePerComprovar == nombreSecret2)
+                Console.WriteLine("Guau. Ben fet. Els nombres son " + nombreSecret1+" i "+nombreSecret2);
+            else
+                Console.WriteLine("Buuuu. No son aquests! Son " + nombreSecret1+" i " + nombreSecret2);
+
+
+        }
+    }
+}

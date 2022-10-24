@@ -1,0 +1,26 @@
+using System;
+
+namespace n_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double nota;
+            Console.WriteLine("Introduiu la nota");
+            nota = Convert.ToDouble(Console.ReadLine());
+
+            if (nota >= 9.0 && nota <=10.0)
+                Console.WriteLine("Excel.lent");
+            else if (nota >= 6.5 && nota < 9.0)
+                Console.WriteLine("Notable");
+            else if (nota >=5.0 && nota < 6.5)
+                Console.WriteLine("Suficient");
+            else
+                Console.WriteLine("Suspès");
+
+
+                        
+        }
+    }
+}

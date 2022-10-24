@@ -1,0 +1,24 @@
+using System;
+
+namespace n_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int nombreSecret = rnd.Next(0, 11);
+            int nombrePerComprovar;
+
+            Console.WriteLine("Prova sort. El nombre està entre 0 i 10");
+            nombrePerComprovar = Convert.ToInt32(Console.ReadLine());
+
+            if (nombrePerComprovar==nombreSecret)
+                Console.WriteLine("Guau. Ben fet. El nombre era "+nombreSecret);
+            else
+                Console.WriteLine("Buuuu. No era aquest! Era "+nombreSecret);
+
+
+        }
+    }
+}
