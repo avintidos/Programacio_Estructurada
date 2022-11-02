@@ -455,3 +455,172 @@ namespace n_20
     }
 }
 
+// exercici 21
+
+using System;
+
+namespace Ex_21
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int horesMinutsSegons, hores, minuts, segons;
+
+            Console.WriteLine("introdueix el temps [hhmmss]");
+            horesMinutsSegons = Convert.ToInt32(Console.ReadLine());
+            hores = horesMinutsSegons / 10000;
+            minuts = horesMinutsSegons / 100 % 100;
+            //minuts= horesMinutsSegons %10000 /100 
+            segons = horesMinutsSegons % 100;
+
+            if (hores > 23 || hores < 0 || minuts > 59 || minuts < 0 || segons > 59 || segons < 0)
+            {
+                Console.WriteLine("Las dades introduides son incorrectes");
+            }
+            else{
+                segons++;
+                    if (segons == 60) {
+                    minuts++;
+                    segons = 0;
+                    }
+                    if (minuts == 60) {
+                    hores++;
+                    minuts = 0;
+                     }
+                    if (hores == 24)
+                    hores = 0;
+                Console.WriteLine($"hores= {hores}, minuts= {minuts}, segons={segons}");
+            }
+            
+        }
+    }
+}
+
+// exercici 21_plus
+
+using System;
+
+namespace Ex_21
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int horesMinutsSegons, hores, minuts, segons, segonsSumar;
+
+            Console.WriteLine("introdueix el temps [hhmmss]");
+            horesMinutsSegons = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("introdueix els segons a sumar");
+            segonsSumar = Convert.ToInt32(Console.ReadLine());
+
+            hores = horesMinutsSegons / 10000;
+            minuts = horesMinutsSegons / 100 % 100;
+            //minuts= horesMinutsSegons %10000 /100 
+            segons = horesMinutsSegons % 100;
+
+            if (hores > 23 || hores < 0 || minuts > 59 || minuts < 0 || segons > 59 || segons < 0)
+            {
+                Console.WriteLine("Las dades introduides son incorrectes");
+            }
+            else
+            {
+                segons+=segonsSumar;
+                if (segons > 59)
+                {
+                    minuts = minuts + segons / 60;
+                    segons = segons % 60;
+                }
+                if (minuts > 59)
+                {
+                    hores += minuts / 60;
+                    minuts %= 60;
+                }
+                if (hores > 23)
+                    
+                    hores %= 24;
+                Console.WriteLine($"hores= {hores}, minuts= {minuts}, segons={segons}");
+            }
+        }
+    }
+}
+            
+        }
+    }
+}
+
+// Exercici 22
+
+using System;
+
+namespace Ex_22
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int horaEntrada, minutEntrada, horaSortida, minutSortida, preuFinal, hores, minuts;
+            Console.WriteLine("Hora d'entrada");
+            horaEntrada = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Minut d'entrada");
+            minutEntrada = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hora sortida");
+            horaSortida = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Minut sortida");
+            minutSortida = Convert.ToInt32(Console.ReadLine());
+
+            hores = horaSortida - horaEntrada;
+            minuts = minutSortida - minutEntrada;
+            preuFinal = hores;
+            if (minuts < 0)
+            {
+                hores--;
+                minuts += 60;
+                
+            }
+
+            if (minuts > 0)
+            {
+                preuFinal++;
+            }
+            Console.WriteLine($"El preu final es {preuFinal} euros");
+        }
+    }
+}
+
+
+//Exercici 23
+
+using System;
+
+namespace Ex_23
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int nombre, invers=0;
+
+            Console.WriteLine("Escriu el nombre de dos xifres");
+            nombre = Convert.ToInt32(Console.ReadLine());
+
+            if (nombre == 0 || nombre > 99)
+            {
+                Console.WriteLine("Nombre incorrecte");
+            }
+
+            else
+            {
+                //invers = (nombre % 10)*10;
+                //invers += nombre / 10;
+                invers = nombre % 10 * 10 + nombre / 10;
+            }
+            if (nombre == invers)
+            {
+                Console.WriteLine("CAPICUA");
+            }
+            else
+                Console.WriteLine(invers);
+        }
+    }
+}
