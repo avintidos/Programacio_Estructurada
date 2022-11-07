@@ -250,6 +250,32 @@ namespace n_8
 
 // exercici 9
 // exercici 10
+
+using System;
+
+namespace ex10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declaracio de variables
+            char caracter;
+
+            //Inicialitzacio de variables
+            Console.WriteLine("Escriu un caracter");
+            caracter = Convert.ToChar(Console.ReadLine());
+
+            //Algorisme
+            if(caracter >= 'a' && caracter <= 'z')
+                Console.WriteLine("minuscula");
+            else if(caracter >= 'A' && caracter <='Z')
+                Console.WriteLine("majuscula");
+            else
+                Console.WriteLine("no es lletra");
+        }
+    }
+}
 // exercici 11
 // exercici 12
 // exercici 13
@@ -301,7 +327,34 @@ namespace n_14
 // exercici 15
 // exercici 16
 
+using System;
 
+namespace ex16
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declaracio de variables
+            int a, b, c;
+
+            //Variables entrada
+            Console.WriteLine("Escriu valor a");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Escriu valor b");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Escriu valor c");
+            c = Convert.ToInt32(Console.ReadLine());
+
+            //algorisme
+            if((a <= b && b <= c) /*creixent */|| (a >= b && b >= c)/*decreixent*/)
+                Console.WriteLine("ordenats");
+            else
+                Console.WriteLine("No ordenats");
+
+        }
+    }
+}
 // Exercici 17
 using System;
 
@@ -624,3 +677,257 @@ namespace Ex_23
         }
     }
 }
+
+//Exercici 24
+
+//Exercici 25
+namespace Ex_25
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n1, n2, n3, aux;
+
+            Console.WriteLine("Primer nombre? (1/3)");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Primer nombre? (2/3)");
+            n2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Primer nombre? (3/3)");
+            n3 = Convert.ToInt32(Console.ReadLine());
+
+
+            if (n2 < n1) {
+                aux = n1;
+                n1 = n2;
+                n2 = aux;
+                    }
+            if (n3 < n2)
+            {
+                aux = n2;
+                n2 = n3;
+                n3 = aux;
+            }
+            if (n2 < n1)
+            {
+                aux = n1;
+                n1 = n2;
+                n2 = aux;
+            }
+            Console.WriteLine("El ordre es el seguent: "+n1+" "+n2+" "+n3);
+
+
+            
+
+            
+
+        }   
+    }
+}
+
+//Exercici 26
+
+//Exercici 27
+namespace Ex_27
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Demanar variables
+            int diaSetmana;
+
+            //Demanar valors entrada
+            Console.WriteLine("Quin es el nombre?");
+            diaSetmana = Convert.ToInt32(Console.ReadLine());
+
+            //switch
+            switch (diaSetmana)
+            {
+                case 1:
+                    Console.WriteLine("Dilluns");
+                    break;
+                case 2:
+                    Console.WriteLine("Dimarts");
+                    break;
+                case 3:
+                    Console.WriteLine("Dimecres");
+                    break;
+                case 4:
+                    Console.WriteLine("Dijous");
+                    break;
+                case 5:
+                    Console.WriteLine("Divendres");
+                    break;
+                case 6:
+                    Console.WriteLine("Dissabte");
+                    break;
+                case 7:
+                    Console.WriteLine("Diumenge");
+                    break;
+                default:
+                    Console.WriteLine("Nombre incorrecte, (1-7)");
+                    break;
+
+            }
+
+
+
+        }
+    }
+}
+
+//Exercici 28
+
+using System;
+
+namespace Ex_28
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declaracio de variables
+            int dniNombre, modul;
+            string control = "TRWAGMYFPDXBNJZSQVHLCKE";
+            
+            //Demanar variables entrada
+            Console.WriteLine("Quin es el dni?");
+            dniNombre = Convert.ToInt32(Console.ReadLine());
+
+            //Algorisme
+            modul = dniNombre % 23;
+
+            //Sortida
+            Console.WriteLine("La lletra de control es "+control[modul]);
+        }
+    }
+}
+
+// Exercici 29
+
+using System;
+
+namespace Ex_29
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int nombre, desena, unitats;
+           
+
+            Console.WriteLine("Nombre de dos xifres màxim");
+            nombre = Convert.ToInt32(Console.ReadLine());
+            
+
+            if (nombre <1 ||nombre >99)
+                Console.WriteLine("Un poquito de por favor (1-99)");
+            else
+            {
+                desena = nombre / 10;
+                unitats = nombre % 10;
+                switch (desena)
+                {
+                    case 1:
+                        Console.Write("X");
+                        break;
+                    case 2:
+                        Console.Write("XX");
+                        break;
+                    case 3:
+                        Console.Write("XXX");
+                        break;
+                    case 4:
+                        Console.Write("XL");
+                        break;
+                    case 5:
+                        Console.Write("L");
+                        break;
+                    case 6:
+                        Console.Write("LX");
+                        break;
+                    case 7:
+                        Console.Write("LXX");
+                        break;
+                    case 8:
+                        Console.Write("LXXX");
+                        break;
+                    case 9:
+                        Console.Write("XC");
+                        break;
+                }
+                switch (unitats)
+                {
+                    case 1: Console.Write("I"); break;
+                    case 2: Console.Write("II"); break;
+                    case 3: Console.Write("III"); break;
+                    case 4: Console.Write("IV"); break;
+                    case 5: Console.Write("V"); break;
+                    case 6: Console.Write("VI"); break;
+                    case 7: Console.Write("VII"); break;
+                    case 8: Console.Write("VIII"); break;
+                    case 9: Console.Write("IX"); break;
+                }
+            }
+        }
+    }
+}
+
+
+//Exercici 30
+
+using System;
+
+namespace Ex_30
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int dia, mes, mesDia;
+
+            Console.WriteLine("quin es el dia?");
+            dia = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("quin es el mes?");
+            mes = Convert.ToInt32(Console.ReadLine());
+
+            mesDia = Convert.ToInt32(mes +""+ dia);
+            //mesDia = mes *100 + dia;
+            Console.WriteLine(mesDia);
+
+        }
+    }
+}
+
+// Exercici 31
+
+using System;
+
+namespace Ex_31
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int dia, mes, any, data, days;
+
+
+            Console.WriteLine("Quina es la data? (ddmmaaaa)");
+            data = Convert.ToInt32(Console.ReadLine());
+            dia = data / 1000000;
+            mes = data / 10000 % 100;
+            any = data % 10000;
+            
+
+            darrerDia = DateTime.DaysInMonth(any, mes);
+
+            if (dia >darrerDia || dia <1 ||mes >12 || mes<1 || any <1 )
+                Console.WriteLine("Error!");
+            else
+                Console.WriteLine("Correcte!");
+
+        }
+    }
+}
+
