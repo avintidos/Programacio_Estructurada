@@ -43,3 +43,25 @@ namespace Ex_02
         }
     }
 }
+
+// Exercici 4
+using System;
+
+namespace Ex_03
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char lletra;
+            do
+            {
+                Console.WriteLine("Escriu s o n per contrinuar");
+                lletra = Console.ReadKey().KeyChar;
+            } while (lletra == 's');
+            Console.WriteLine("ay, piraaaaata");
+        }
+
+    }
+}
+
