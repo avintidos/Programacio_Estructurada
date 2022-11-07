@@ -249,6 +249,8 @@ namespace n_8
 }
 
 // exercici 9
+
+
 // exercici 10
 
 using System;
@@ -277,7 +279,35 @@ namespace ex10
     }
 }
 // exercici 11
+
+
 // exercici 12
+
+using System;
+
+namespace n_12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char caracter;
+
+            Console.WriteLine("Escriu un caracter");
+            caracter = Convert.ToChar(Console.ReadLine());
+
+            if (caracter>='a' && caracter<='z')
+                Console.WriteLine("Minuscula");
+            else if (caracter>='A' && caracter<='Z')
+                Console.WriteLine("Majuscula");
+            else
+                Console.WriteLine("nolletra");
+
+
+        }
+    }
+}
+
 // exercici 13
 
 using System;
@@ -325,6 +355,8 @@ namespace n_14
     }
 }
 // exercici 15
+
+
 // exercici 16
 
 using System;
